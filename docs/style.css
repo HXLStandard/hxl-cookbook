@@ -2,6 +2,10 @@ body {
     font-family: sans-serif;
 }
 
+nav[aria-label="up"] {
+    font-size: 83.333333%;
+}
+
 ol[role="navigation"] li {
     margin: 1ex 0;
 }
