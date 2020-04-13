@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    padding: 1em;
 }
 
 nav[aria-label="up"] {
@@ -7,7 +8,7 @@ nav[aria-label="up"] {
 }
 
 ol[role="navigation"] li {
-    margin: 1ex 0;
+    padding: 1ex 0;
 }
 
 table {
