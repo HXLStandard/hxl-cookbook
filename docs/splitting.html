@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Splitting a column</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <h1>Splitting a column</h1>
+    <ol class="instruction-list">
+      <li>
+        <p>
+          We want the sector information in the <var>#activity</var> column to appear in its own column:
+        </p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Activity data</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#activity</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td>Coast Province</td>
+                <td>Org A | Health</td>
+              </tr>
+              <tr>
+                <td>Plains Province</td>
+                <td>Org B | Nutrition</td>
+              </tr>
+              <tr>
+                <td>Mountains Province</td>
+                <td>Org A | Child Protection</td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>        
+      </li>
+      <li>
+        <p>
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Add-column-filter" target="_blank">Add
+          column filter</a> to duplicate the column.
+        </p>
+        <dl class="compact">
+          <dt>New tag</dt>
+          <dd><code>#sector</code></dd>
+          <dt>Fixed value</dt>
+          <dd><code>{{#activity}}</code></dd>
+          <dt>Display header</dt>
+          <dd><code>Sector or cluster</code></dd>
+        </dl>
+        <p>
+          Result:
+        </p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Activity data</th>
+              <th>Sector or cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#activity</th>
+              <th>#sector</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td>Coast Province</td>
+                <td>Org A | Health</td>
+                <td>Org A | Health</td>
+              </tr>
+              <tr>
+                <td>Plains Province</td>
+                <td>Org B | Nutrition</td>
+                <td>Org B | Nutrition</td>
+              </tr>
+              <tr>
+                <td>Mountains Province</td>
+                <td>Org A | Child Protection</td>
+                <td>Org A | Child Protection</td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
+      </li>
+      <li>
+        <p>
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Replace-data-filter"
+          target="_blank">Replace data filter</a> with a regular
+          expression to remove everything <em>after</em> the "<code>|</code>" in
+          the original <var>#activity</var> column.
+        </p>
+        <dl class="compact">
+          <dt>Text or pattern</dt>
+          <dd><code>\|.*$</code></dd>
+          <dt>Use regex</dt>
+          <dd><i>(checked)</i></dd>
+          <dt>New text</dt>
+          <dd><i>(leave empty)</i></dd>
+          <dt>Replace in</dt>
+          <dd><code>#activity</code></dd>
+        </dl>
+        <p>Result:</p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Activity data</th>
+              <th>Sector or cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#activity</th>
+              <th>#sector</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td>Coast Province</td>
+                <td>Org A</td>
+                <td>Org A | Health</td>
+              </tr>
+              <tr>
+                <td>Plains Province</td>
+                <td>Org B</td>
+                <td>Org B | Nutrition</td>
+              </tr>
+              <tr>
+                <td>Mountains Province</td>
+                <td>Org A</td>
+                <td>Org A | Child Protection</td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>        
+      </li>
+      <li>
+        <p>
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Replace-data-filter"
+          target="_blank">Replace data filter</a> with a regular
+          expression to remove everything <em>before</em> the
+          "<code>|</code>" in the new <var>#sector</var> column.
+        </p>
+        <dl class="compact">
+          <dt>Text or pattern</dt>
+          <dd><code>^.*\|</code></dd>
+          <dt>Use regex</dt>
+          <dd><i>(checked)</i></dd>
+          <dt>New text</dt>
+          <dd><i>(leave empty)</i></dd>
+          <dt>Replace in</dt>
+          <dd><code>#sector</code></dd>
+        </dl>
+        <p>Result:</p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Activity data</th>
+              <th>Sector or cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#activity</th>
+              <th>#sector</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td>Coast Province</td>
+                <td>Org A</td>
+                <td>Health</td>
+              </tr>
+              <tr>
+                <td>Plains Province</td>
+                <td>Org B</td>
+                <td>Nutrition</td>
+              </tr>
+              <tr>
+                <td>Mountains Province</td>
+                <td>Org A</td>
+                <td>Child Protection</td>
+              </tr>
+            </tbody>
+          </thead>
+        </table>        
+      </li>
+    </ol>
+  </body>
+</html>

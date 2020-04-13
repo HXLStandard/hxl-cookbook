@@ -1,0 +1,50 @@
+body {
+    font-family: sans-serif;
+}
+
+table {
+    border: 1px solid;
+    background: grey;
+}
+
+thead th, thead td {
+    background: lightgrey;
+}
+
+th, td {
+    padding: 1ex 1em;
+    background: white;
+}
+
+table.example {
+    font-family: monospace;
+}
+
+tr.hashtag-row th {
+    font-weight: lighter;
+    font-style: italic;
+}
+
+dl.compact {
+    font-size: 83.333333%;
+}
+
+dl.compact dt {
+    float: left;
+    clear: left;
+    font-weight: bold;
+    width: 10em;
+    margin-bottom: 0.5ex;
+}
+
+dl.compact dd {
+    float: left;
+    margin-bottom: 0.5ex;
+}
+
+dl:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
