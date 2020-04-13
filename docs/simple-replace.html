@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple text replacement</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <h1>Simple text replacement</h1>
+    <ol class="instruction-list">
+      <li>
+        <p>
+          We want to make the spelling of "WASH"/"W.A.S.H." consistent in the dataset:
+        </p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Cluster</th>
+            </tr>
+            <tr>
+              <th>#adm1</th>
+              <th>#sector</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coast</td>
+              <td>WASH</td>
+            </tr>
+            <tr>
+              <td>Plains</td>
+              <td>W.A.S.H.</td>
+            </tr>
+            <tr>
+              <td>Mountains</td>
+              <td>WASH</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Replace-data-filter"
+          target="_blank">Replace data filter</a> to replace "W.A.S.H."
+          with "WASH" in the <var>#sector</var> column.
+        </p>
+        <dl class="compact">
+          <dt>Text to replace</dt>
+          <dd><code>W.A.S.H.</code></dd>
+          <dt>Use regex</dt>
+          <dd><i>(leave unchecked)</i></dd>
+          <dt>New text</dt>
+          <dd><code>WASH</code></dd>
+          <dt>Replace in</dt>
+          <dd>#sector</dd>
+        </dl>
+        <p>Result:</p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Cluster</th>
+            </tr>
+            <tr>
+              <th>#adm1</th>
+              <th>#sector</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coast</td>
+              <td>WASH</td>
+            </tr>
+            <tr>
+              <td>Plains</td>
+              <td>WASH</td>
+            </tr>
+            <tr>
+              <td>Mountains</td>
+              <td>WASH</td>
+            </tr>
+          </tbody>
+        </table>        
+      </li>
+    </ol>
+  </body>
+</html>
+      
