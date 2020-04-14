@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reordering columns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <nav role="navigation" aria-label="up">
+      &#x2B06;       
+      <cite><a href=".">HXL toolchain cookbook</a></cite>
+    </nav>
+    <h1>Reordering columns</h1>
+    <p>
+      <a href="[Proxy link]" target="_blank">View recipe in the HXL Proxy.</a>
+    </p>
+    <ol class="instruction-list">
+      <li>
+        <p>
+          We want the columns in the dataset to appear in a different order.
+        </p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Cluster</th>
+              <th>District</th>
+              <th>Organisation</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#sector</th>
+              <th>#adm2</th>
+              <th>#org</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coast Province</td>
+              <td>WASH</td>
+              <td>Port District</td>
+              <td>Org A</td>
+            </tr>
+            <tr>
+              <td>Plains Province</td>
+              <td>Education</td>
+              <td>Grasslands District</td>
+              <td>Org B</td>
+            </tr>
+            <tr>
+              <td>Mountains Province</td>
+              <td>Health</td>
+              <td>Valley District</td>
+              <td>Org A</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>
+          Create a separate, empty dataset—just the header and hashtag
+          rows—with the columns in the order you'd like (leave out any
+          columns you don't want included in the output):
+        </p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>District</th>
+              <th>Organisation</th>
+              <th>Cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#sector</th>
+              <th>#adm2</th>
+              <th>#org</th>
+            </tr>
+          </thead>
+        </table>
+      </li>
+      <li>
+        <p>
+          Choose the empty dataset as your primary dataset to process.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Append-datasets-filter">Append
+          datasets filter</a> to append your original dataset to the
+          empty one (you may append multiple datasets if you'd like).
+        </p>
+        <dl class="compact">
+          <dt>Exclude columns not in original</dt>
+          <dd><i>(checked)</i></dd>
+          <dt>URL of additional dataset</dt>
+          <dd><i>(URL of original dataset)</i></dd>
+        </dl>
+        <p>Result:</p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>District</th>
+              <th>Organisation</th>
+              <th>Cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#sector</th>
+              <th>#adm2</th>
+              <th>#org</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coast Province</td>
+              <td>Port District</td>
+              <td>Org A</td>
+              <td>WASH</td>
+            </tr>
+            <tr>
+              <td>Plains Province</td>
+              <td>Grasslands District</td>
+              <td>Org B</td>
+              <td>Education</td>
+            </tr>
+            <tr>
+              <td>Mountains Province</td>
+              <td>Valley District</td>
+              <td>Org A</td>
+              <td>Health</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </body>
+</html>
+      

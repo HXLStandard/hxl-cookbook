@@ -42,7 +42,8 @@ dl.compact dt {
     float: left;
     clear: left;
     font-weight: bold;
-    width: 10em;
+    width: 20em;
+    max-width: 40%;
     margin-bottom: 0.5ex;
 }
 
