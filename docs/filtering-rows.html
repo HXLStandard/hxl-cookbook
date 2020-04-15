@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>[Recipe title]</title>
+    <title>Filtering rows</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css"/>
@@ -11,37 +11,43 @@
       &#x2B06;       
       <cite><a href=".">HXL toolchain cookbook</a></cite>
     </nav>
-    <h1>[Recipe title]</h1>
+    <h1>Filtering rows</h1>
     <p>
       <a href="[Proxy link]" target="_blank">View recipe in the HXL Proxy.</a>
     </p>
     <ol class="instruction-list">
       <li>
         <p>
-          [Opening]
+          We want only the activities for <cite>Org A</cite> from the
+          following dataset:
         </p>
         <table class="example">
           <thead>
             <tr>
               <th>Province</th>
+              <th>Organisation</th>
               <th>Cluster</th>
             </tr>
             <tr class="hashtag-row">
               <th>#adm1</th>
+              <th>#org</th>
               <th>#sector</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Coast Province</td>
+              <td>Org A</td>
               <td>WASH</td>
             </tr>
             <tr>
               <td>Plains Province</td>
+              <td>Org B</td>
               <td>WASH</td>
             </tr>
             <tr>
               <td>Mountains Province</td>
+              <td>Org A</td>
               <td>WASH</td>
             </tr>
           </tbody>
@@ -49,14 +55,42 @@
       </li>
       <li>
         <p>
-          [Step instructions]
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Select-rows-filter">Select
+          rows filter</a> to choose the matching rows.
         </p>
         <dl class="compact">
-          <dt>[Param name]</dt>
-          <dd><code>[Param value]</code></dd>
+          <dt>Queries</dt>
+          <dd><code>#org=Org A</code></dd>
+          <dt>Invert query</dt>
+          <dd><i>(not checked)</i></dd>
         </dl>
         <p>Result:</p>
         <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Organisation</th>
+              <th>Cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#org</th>
+              <th>#sector</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coast Province</td>
+              <td>Org A</td>
+              <td>WASH</td>
+            </tr>
+            <tr>
+              <td>Mountains Province</td>
+              <td>Org A</td>
+              <td>WASH</td>
+            </tr>
+          </tbody>
         </table>        
       </li>
     </ol>
