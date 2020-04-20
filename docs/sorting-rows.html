@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorting data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <nav role="navigation" aria-label="up">
+      &#x2B06;       
+      <cite><a href=".">HXL toolchain cookbook</a></cite>
+    </nav>
+    <h1>Sorting data</h1>
+    <p>
+      <a href="https://proxy.hxlstandard.org/data/edit?dest=data_edit&amp;filter01=sort&amp;sort-tags01=%23sector%2C+%23adm1&amp;url=https%3A%2F%2Fhxlstandard.github.io%2Fhxl-cookbook%2Fexamples%2Fsorting-rows-01.csv" target="_blank">View recipe in the HXL Proxy.</a>
+    </p>
+    <ol class="instruction-list">
+      <li>
+        <p>
+          We want to sort the following dataset, first by cluster,
+          then (within each cluster) by province:
+        </p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#sector</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coast Province</td>
+              <td>WASH</td>
+            </tr>
+            <tr>
+              <td>Plains Province</td>
+              <td>Health</td>
+            </tr>
+            <tr>
+              <td>Mountains Province</td>
+              <td>Health</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>
+          Use the <a
+          href="https://github.com/HXLStandard/hxl-proxy/wiki/Sort-rows-filter">Sort
+          rows filter</a> to specify the sorting order.
+        </p>
+        <dl class="compact">
+          <dt>Tags for sorting</dt>
+          <dd><code>#sector, #adm1</code></dd>
+          <dt>Reverse order</dt>
+          <dd><i>(not checked)</i></dd>
+        </dl>
+        <p>Result:</p>
+        <table class="example">
+          <thead>
+            <tr>
+              <th>Province</th>
+              <th>Cluster</th>
+            </tr>
+            <tr class="hashtag-row">
+              <th>#adm1</th>
+              <th>#sector</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mountains Province</td>
+              <td>Health</td>
+            </tr>
+            <tr>
+              <td>Plains Province</td>
+              <td>Health</td>
+            </tr>
+            <tr>
+              <td>Coast Province</td>
+              <td>WASH</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </body>
+</html>
+      
